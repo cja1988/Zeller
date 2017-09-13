@@ -6,28 +6,30 @@ public class Zeller {
 
 
         System.out.println("Enter year: ");
-        double year = input.nextInt();
+        int year = input.nextInt();
 
         System.out.println("Enter month: ");
-        double month = input.nextInt();
+        int month = input.nextInt();
 
         System.out.println("Enter the day of the month(1-31): ");
-        double dayOfMonth = input.nextInt();
+        int dayOfMonth = input.nextInt();
 
 
-
-        double yearOfCentury = year % 100;
-        double century = year / 100;
-
-        if (month == 1){
+          if (month == 1){
             month = 13;
+            year = year -1;
         }
         if (month == 2) {
             month = 14;
+            year = year -1;
         }
+        int yearOfCentury = year % 100;
+        int century = year / 100;
+
+       
 
         System.out.println(month);
-        double dayOfWeek = ((dayOfMonth + (26*(month + 1)/10) + yearOfCentury + (yearOfCentury/4) + (century / 4) + (5 * century)) % 7);
+        int dayOfWeek = ((dayOfMonth + (26*(month + 1)/10) + yearOfCentury + (yearOfCentury/4) + (century / 4) + (5 * century)) % 7);
 
 
 
